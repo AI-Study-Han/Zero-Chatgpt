@@ -1,10 +1,10 @@
 # Zero-Chatgpt
 本项目的目的是想从0开始，将chatgpt的技术路线跑一遍。包括：数据收集 -> 数据清洗和去重 -> 词表训练 -> 语言模型预训练 -> 指令微调 -> 强化学习（rlhf，ppo）。最主要的是把代码和流程跑通，效果有时间再调优。  
 ## 训练环境  
-
+稍后放上来。 
 
 ## 训练数据、模型权重和训练镜像文件  
-
+稍后会放出链接。  
 
 ## 数据收集和清洗  
 本项目一共收集了10B左右的中文训练语料，包括[中文维基百科](https://huggingface.co/datasets/pleisto/wikipedia-cn-20230720-filtered/blob/main/wikipedia-cn-20230720-filtered.json)，[中文百度百科](https://huggingface.co/datasets/xuqinyang/BaiduBaike-5.63M/blob/main/563w_baidubaike.json)和[SkyPile-150B](https://huggingface.co/datasets/Skywork/SkyPile-150B)随机抽取了部分数据。  
