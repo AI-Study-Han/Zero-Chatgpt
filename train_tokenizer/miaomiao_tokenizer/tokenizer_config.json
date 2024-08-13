@@ -1,0 +1,73 @@
+{
+    "auto_map": {
+        "AutoTokenizer": [
+            "tokenization_miaomiao.MiaomiaoTokenizer",
+            null
+        ]
+    },
+    "add_prefix_space": false,
+    "added_tokens_decoder": {
+        "32000": {
+            "content": "system",
+            "lstrip": false,
+            "normalized": false,
+            "rstrip": false,
+            "single_word": false,
+            "special": true
+        },
+        "32001": {
+            "content": "user",
+            "lstrip": false,
+            "normalized": false,
+            "rstrip": false,
+            "single_word": false,
+            "special": true
+        },
+        "32002": {
+            "content": "assistant",
+            "lstrip": false,
+            "normalized": false,
+            "rstrip": false,
+            "single_word": false,
+            "special": true
+        },
+        "32003": {
+            "content": "<|endoftext|>",
+            "lstrip": false,
+            "normalized": false,
+            "rstrip": false,
+            "single_word": false,
+            "special": true
+        },
+        "32004": {
+            "content": "<|im_start|>",
+            "lstrip": false,
+            "normalized": false,
+            "rstrip": false,
+            "single_word": false,
+            "special": true
+        },
+        "32005": {
+            "content": "<|im_end|>",
+            "lstrip": false,
+            "normalized": false,
+            "rstrip": false,
+            "single_word": false,
+            "special": true
+        }
+    },
+    "additional_special_tokens": [
+        "<|im_start|>",
+        "<|im_end|>"
+    ],
+    "bos_token": null,
+    "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\n你是一个由喵阿姨开发的喵喵小助手<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "clean_up_tokenization_spaces": false,
+    "eos_token": "<|im_end|>",
+    "errors": "replace",
+    "model_max_length": 32768,
+    "pad_token": "<|endoftext|>",
+    "split_special_tokens": false,
+    "tokenizer_class": "MiaomiaoTokenizer",
+    "unk_token": null
+}
