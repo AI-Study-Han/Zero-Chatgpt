@@ -1,10 +1,18 @@
-# Zero-Chatgpt
-本项目的目的是想从0开始，将chatgpt的技术路线跑一遍。包括：数据收集 -> 数据清洗和去重 -> 词表训练 -> 语言模型预训练 -> 指令微调 -> 强化学习（rlhf，ppo）。最主要的是把代码和流程跑通，效果有时间再调优。  
+# Zero-Chatgpt  
+<div style="text-align: center;">
+    <img src="image.webp" alt="Zero-Chatgpt" width="300">
+</div> 
+
+本开源项目的目的是想从0开始，将chatgpt的技术路线跑一遍。  
+包括：数据收集 -> 数据清洗和去重 -> 词表训练 -> 语言模型预训练 -> 指令微调 -> 强化学习（rlhf，ppo）。  
+最主要的是把代码和流程跑通，效果有时间再调优。  
+预训练数据：10B token，指令微调数据：30w条，rlhf数据：10w条，模型大小：0.1B。  
+训练流程和代码都已经跑通，想要更好的效果的话可以直接调整模型配置文件做scaling up，这边训练的经验看更大的模型、更多的数据对于效果的提升是十分明显的。  
 ## 训练环境  
-稍后放上来。 
+cuda 12.1、pytorch、transformers、deepspeed等常用的环境。  
 
 ## 训练数据、模型权重和训练镜像文件  
-稍后会放出链接。  
+[微调数据、rlhf数据、模型权重](https://huggingface.co/My521/Zero-Chatgpt/tree/main)都放在这里了，模型权重去掉前缀名后和模型代码、配置文件放在一起就可以加载了。预训练数据、训练镜像太大，不好上传，有需要的可以留言。   
 
 ## 数据收集和清洗  
 本项目一共收集了10B左右的中文训练语料，包括[中文维基百科](https://huggingface.co/datasets/pleisto/wikipedia-cn-20230720-filtered/blob/main/wikipedia-cn-20230720-filtered.json)，[中文百度百科](https://huggingface.co/datasets/xuqinyang/BaiduBaike-5.63M/blob/main/563w_baidubaike.json)和[SkyPile-150B](https://huggingface.co/datasets/Skywork/SkyPile-150B)随机抽取了部分数据。  
@@ -13,7 +21,7 @@
 
 数据处理的代码在data_process文件夹下。  
 
-## tokenizer训练  
+## Tokenizer训练  
 从3类数据中随机抽取了部分数据（取决你服务器内存大小，本项目抽取了1.5G文本）训练。词表大小设置为32000（参考llama），因为这里模型设置的比较小，为了避免模型头重脚轻（embedding层参数占比太高），所以词表也比较小。special_tokens参考qwen设置。    
 
 tokenizer训练的代码在train_tokenizer文件夹下。
@@ -34,7 +42,7 @@ sft过程使用了30w条数据，效果也不是很好，可能是因为模型�
 
 指令微调的脚本和代码在sft文件夹下面。  
 
-微调后模型简单测试结果：
+微调后模型简单测试结果：  
 ![alt text](image.png)  
 
 ## 强化学习  
