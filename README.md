@@ -1,7 +1,7 @@
-# Zero-Chatgpt  
-<div style="text-align: center;">
-    <img src="image.webp" alt="Zero-Chatgpt" width="300">
-</div> 
+# Zero-Chatgpt   
+<p align="center">
+  <img src="image.webp" alt="Zero-Chatgpt" style="width:20%;">
+</p> 
 
 本开源项目的目的是想从0开始，将chatgpt的技术路线跑一遍。  
 包括：数据收集 -> 数据清洗和去重 -> 词表训练 -> 语言模型预训练 -> 指令微调 -> 强化学习（rlhf，ppo）。  
@@ -9,7 +9,7 @@
 预训练数据：10B token，指令微调数据：30w条，rlhf数据：10w条，模型大小：0.1B。  
 训练流程和代码都已经跑通，想要更好的效果的话可以直接调整模型配置文件做scaling up，这边训练的经验看更大的模型、更多的数据对于效果的提升是十分明显的。  
 ## 训练环境  
-cuda 12.1、pytorch、transformers、deepspeed等常用的环境。  
+cuda 12.1、pytorch、transformers、deepspeed等常用的环境，这里的requirements.txt是运行环境的介绍的列表。  
 
 ## 训练数据、模型权重和训练镜像文件  
 [微调数据、rlhf数据、模型权重](https://huggingface.co/My521/Zero-Chatgpt/tree/main)都放在这里了，模型权重去掉前缀名后和模型代码、配置文件放在一起就可以加载了。预训练数据、训练镜像太大，不好上传，有需要的可以留言。   
