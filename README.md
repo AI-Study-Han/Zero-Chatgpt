@@ -12,7 +12,17 @@
 cuda 12.1、pytorch、transformers、deepspeed等常用的环境，这里的requirements.txt是运行环境的介绍的列表。  
 
 ## 二、训练数据、模型权重和训练镜像文件  
-[微调数据、rlhf数据、模型权重、预训练和指令微调镜像（强化学习稍后上传）](https://huggingface.co/My521/Zero-Chatgpt/tree/main)都放在这里了，模型权重去掉前缀名后和模型代码、配置文件放在一起就可以加载了。预训练数据、训练镜像太大，不好上传，有需要的可以留言。   
+[微调数据、rlhf数据、模型权重、预训练和指令微调镜像（强化学习稍后上传）](https://huggingface.co/My521/Zero-Chatgpt/tree/main)都放在这里了，模型权重去掉前缀名后（修改为model.safetensors或者pytorch_model.bin）和模型代码、配置文件放在一起（model文件夹下）就可以加载了。预训练数据、训练镜像太大，稍后上传。  
+
+| 文件名称               | 文件介绍                                                |
+|------------------------|--------------------------------------------------------|
+| [pretrain_model.safetensors](https://huggingface.co/My521/Zero-Chatgpt/blob/main/pretrain_model.safetensors) | 预训练模型的权重文件|
+| [pretrain_model.safetensors](https://huggingface.co/My521/Zero-Chatgpt/blob/main/sft_model.safetensors) | 指令微调后模型的权重文件|
+| [rlhf_pytorch_model.bin](https://huggingface.co/My521/Zero-Chatgpt/blob/main/rlhf_pytorch_model.bin) | rlhf后的模型权重文件|
+| [pretrain_sft.tar](https://huggingface.co/My521/Zero-Chatgpt/blob/main/pretrain_sft.tar)       | 预训练和sft运行镜像|
+| [rlhf.jsonl](https://huggingface.co/My521/Zero-Chatgpt/blob/main/rlhf.jsonl)             | rlhf数据集|
+| [sft.jsonl](https://huggingface.co/My521/Zero-Chatgpt/blob/main/sft.jsonl)              | sft数据|
+
 
 ## 三、数据收集和清洗  
 本项目一共收集了10B左右的中文训练语料，包括[中文维基百科](https://huggingface.co/datasets/pleisto/wikipedia-cn-20230720-filtered/blob/main/wikipedia-cn-20230720-filtered.json)，[中文百度百科](https://huggingface.co/datasets/xuqinyang/BaiduBaike-5.63M/blob/main/563w_baidubaike.json)和[SkyPile-150B](https://huggingface.co/datasets/Skywork/SkyPile-150B)随机抽取了部分数据。  
