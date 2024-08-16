@@ -11,6 +11,8 @@
 ## 一、训练环境  
 cuda 12.1、pytorch、transformers、deepspeed等常用的环境，这里的requirements.txt是运行环境的介绍的列表。  
 
+计算资源是2块A40，预训练是2天左右。
+
 ## 二、训练数据、模型权重和训练镜像文件  
 [微调数据、rlhf数据、模型权重、预训练和指令微调镜像（强化学习稍后上传）](https://huggingface.co/My521/Zero-Chatgpt/tree/main)都放在这里了，模型权重去掉前缀名后（修改为model.safetensors或者pytorch_model.bin）和模型代码、配置文件放在一起（model文件夹下）就可以加载了。预训练数据、训练镜像太大，稍后上传。  
 
@@ -41,7 +43,15 @@ tokenizer训练的代码在train_tokenizer文件夹下。
 
 首先对数据进行分词，生成.bin文件，然后使用huggingface的trainer进行训练。
 
-预训练数据生成代码、训练脚本、训练代码在pretrain文件夹下。
+预训练数据生成代码、训练脚本、训练代码在pretrain文件夹下。 
+
+<p align="center">
+  <img src="loss_vs_time_hours.png" alt="loss" style="width:30%;">
+</p>    
+
+<p align="center">
+  <img src="loss_vs_tokens_millions.png" alt="loss" style="width:30%;">
+</p> 
 
 ## 六、指令微调  
 这里指令微调的数据使用了[firefly-train-1.1M](https://huggingface.co/datasets/YeungNLP/firefly-train-1.1M/blob/main/firefly-train-1.1M.jsonl)，[ruozhiout_qa_cn.jsonl](https://www.modelscope.cn/datasets/baicai003/Llama3-Chinese-dataset/files)。  
