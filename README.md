@@ -46,11 +46,11 @@ tokenizer训练的代码在train_tokenizer文件夹下。
 预训练数据生成代码、训练脚本、训练代码在pretrain文件夹下。 
 
 <p align="center">
-  <img src="loss_vs_time_hours.png" alt="loss" style="width:30%;">
+  <img src="loss_vs_time_hours.png" alt="loss" style="width:50%;">
 </p>    
 
 <p align="center">
-  <img src="loss_vs_tokens_millions.png" alt="loss" style="width:30%;">
+  <img src="loss_vs_tokens_millions.png" alt="loss" style="width:50%;">
 </p> 
 
 ## 六、指令微调  
