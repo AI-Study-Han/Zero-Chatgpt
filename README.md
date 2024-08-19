@@ -21,9 +21,11 @@ cuda 12.1、pytorch、transformers、deepspeed等常用的环境，这里的requ
 | [pretrain_model.safetensors](https://huggingface.co/My521/Zero-Chatgpt/blob/main/pretrain_model.safetensors) | 预训练模型的权重文件|
 | [pretrain_model.safetensors](https://huggingface.co/My521/Zero-Chatgpt/blob/main/sft_model.safetensors) | 指令微调后模型的权重文件|
 | [rlhf_pytorch_model.bin](https://huggingface.co/My521/Zero-Chatgpt/blob/main/rlhf_pytorch_model.bin) | rlhf后的模型权重文件|
-| [pretrain_sft.tar](https://huggingface.co/My521/Zero-Chatgpt/blob/main/pretrain_sft.tar)       | 预训练和sft运行镜像|
+| [pretrain_sft.tar](https://huggingface.co/My521/Zero-Chatgpt/blob/main/pretrain_sft.tar)       | 预训练和sft运行镜像|  
+| [rlhf.tar](https://huggingface.co/My521/Zero-Chatgpt/blob/main/rlhf.tar)       | rlhf运行镜像|  
 | [rlhf.jsonl](https://huggingface.co/My521/Zero-Chatgpt/blob/main/rlhf.jsonl)             | rlhf数据集|
-| [sft.jsonl](https://huggingface.co/My521/Zero-Chatgpt/blob/main/sft.jsonl)              | sft数据|
+| [sft.jsonl](https://huggingface.co/My521/Zero-Chatgpt/blob/main/sft.jsonl)              | sft数据|  
+| [pretrain.bin](https://huggingface.co/My521/Zero-Chatgpt/blob/main/pretrain.bin)              | 预训练数据|  
 
 
 ## 三、数据收集和清洗  
