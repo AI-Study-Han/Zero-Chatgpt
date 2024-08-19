@@ -14,7 +14,7 @@ cuda 12.1、pytorch、transformers、deepspeed等常用的环境，这里的requ
 计算资源是2块A40，预训练是2天左右。
 
 ## 二、训练数据、模型权重和训练镜像文件  
-[微调数据、rlhf数据、模型权重、预训练和指令微调镜像（强化学习稍后上传）](https://huggingface.co/My521/Zero-Chatgpt/tree/main)都放在这里了，模型权重去掉前缀名后（修改为model.safetensors或者pytorch_model.bin）和模型代码、配置文件放在一起（model文件夹下）就可以加载了。预训练数据、训练镜像太大，稍后上传。  
+[预训练数据、微调数据、rlhf数据、模型权重、预训练和指令微调镜像](https://huggingface.co/My521/Zero-Chatgpt/tree/main)都放在这里了，模型权重去掉前缀名后（修改为model.safetensors或者pytorch_model.bin）和模型代码、配置文件放在一起（model文件夹下）就可以加载了。预训练数据、训练镜像太大，稍后上传。  
 
 | 文件名称               | 文件介绍                                                |
 |------------------------|--------------------------------------------------------|
